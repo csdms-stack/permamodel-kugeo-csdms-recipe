@@ -1,5 +1,5 @@
 {% set name = "csdms-permamodel-kugeo" %}
-{% set version = "0.1.1" %}
+{% set version = "0.1.2" %}
 
 package:
   name: {{ name }}
@@ -8,6 +8,9 @@ package:
 source:
   git_url: https://github.com/permamodel/permamodel
   git_rev: v{{ version }}
+
+build:
+  number: 0
 
 requirements:
   build:
@@ -19,10 +22,12 @@ requirements:
 
 test:
   requires:
+    - netcdf-fortran=4.4.4=5 # [linux]
     - pymt
 
 about:
   home: https://csdms.colorado.edu/wiki/Model:Kudryavtsev_Model
   license: MIT
-  summary: The geographic version of the Kudryavtsev model from Permamodel.
+  summary:
+    The geographic version of the Kudryavtsev model from Permamodel.
   dev_url: https://github.com/permamodel/permamodel
